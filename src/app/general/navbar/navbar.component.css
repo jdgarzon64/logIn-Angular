@@ -1,0 +1,30 @@
+.buttonNavbar{
+height: 100%;
+background-color: indigo;
+text-align: center;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-style: normal;
+padding: 0 14px;
+}
+.navbar{
+    background-color: indigo;  
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.buttonNavbar:hover {
+    color: #FFF;
+    background-color: rgb(57, 4, 95);
+    border-color: indigo;
+}
+a {
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: #FFF;
+    background-color: rgb(57, 4, 95);
+    border-color: indigo;
+  }
+ 
+ 
