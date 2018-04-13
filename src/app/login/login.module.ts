@@ -14,6 +14,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule
   ],
   declarations: [LoginComponent, CardLoginComponent],
-  exports: [LoginComponent ]
+  exports: [LoginComponent]
 })
 export class LoginModule { }

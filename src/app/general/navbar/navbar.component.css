@@ -5,6 +5,8 @@ text-align: center;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 font-style: normal;
 padding: 0 14px;
+text-decoration: none;
+
 }
 .navbar{
     background-color: indigo;  
@@ -25,6 +27,10 @@ a {
     color: #FFF;
     background-color: rgb(57, 4, 95);
     border-color: indigo;
+  }
+
+  a:visited{
+    text-decoration: none; 
   }
  
  

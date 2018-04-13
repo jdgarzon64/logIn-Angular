@@ -6,6 +6,7 @@ import { ImagenComponent } from './imagen/imagen.component';
   imports: [
     CommonModule
   ],
-  declarations: [ImagenComponent]
+  declarations: [ImagenComponent],
+  exports: [ImagenComponent]
 })
 export class InicioModule { }

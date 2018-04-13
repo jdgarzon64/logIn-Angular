@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { LoginModule } from './login/login.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,10 @@ import { InicioModule } from './inicio/inicio.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './general/navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { RegistroModule } from './registro/registro.module';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { RegistroService } from './servicios/registro.service';
 
 
 @NgModule({
@@ -20,10 +25,12 @@ import { AppRoutingModule } from './/app-routing.module';
     LoginModule,
     InicioModule,
     BrowserAnimationsModule,
-    AppRoutingModule
-
+    RegistroModule,
+    AppRoutingModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [RegistroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
