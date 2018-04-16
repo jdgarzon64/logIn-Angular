@@ -5,8 +5,9 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 @Injectable()
 export class RegistroService {
   usuariosList: AngularFireList<any>;
+  listaUsuarios = new Array(Usuario);
   constructor(private firebase: AngularFireDatabase) { }
-
+  
   getUsuarios() {
     return this.usuariosList = this.firebase.list('usuarios');
   }
@@ -21,8 +22,6 @@ export class RegistroService {
   }
 
   getUsuario(usuario: string, password: string) {
-    this.usuariosList.(element => {
-      
-    });
+
   }
 }

@@ -1,3 +1,6 @@
+import { Usuario } from './../../modelo/Usuario';
+import { NgForm } from '@angular/forms';
+import { RegistroService } from './../../servicios/registro.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-registro.component.css']
 })
 export class CardRegistroComponent implements OnInit {
-
-  constructor() { }
+  usuario: Usuario = new Usuario();
+  constructor(private registroService: RegistroService) { }
 
   ngOnInit() {
+    this.registroService.getUsuarios();
   }
 
+  onSubmit() {
+    console.log(this.usuario);
+    this.registroService.insertUsuario(this.usuario);
+  }
 }
