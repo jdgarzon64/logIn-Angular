@@ -5,7 +5,8 @@ import { CardRegistroComponent } from './card-registro/card-registro.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import {FormsModule} from '@angular/forms';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   declarations: [RegistroComponent, CardRegistroComponent],
   exports: [RegistroComponent]

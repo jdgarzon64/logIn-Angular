@@ -2,26 +2,32 @@
   <mat-card-header class="titulo">
     <mat-card-title class="titulo">Registro</mat-card-title>
   </mat-card-header>
-  <form  #usuarioForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input type="text" matInput placeholder="Nombre" name="nombre" [(ngModel)] = "usuario.nombre">
+      <input type="text" matInput placeholder="Nombre" name="nombre" [(ngModel)]="usuario.nombre" class="form-control" formControlName="nombre">
+     <!--
+     x<p *ngIf="!registroForm.nombre.valid">nombre invalido</p>
+     se podria nombrar una variable formulario.nombre.valid y consultar esta variable mediante ngIf
+     -->
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input type="text" matInput placeholder="Apellido" name="apellido" [(ngModel)] = "usuario.apellido">
+      <input type="text" matInput placeholder="Apellido" name="apellido" [(ngModel)]="usuario.apellido" class="form-control" formControlName="apellido">
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input type="text" matInput placeholder="Usuario" name="usuario" [(ngModel)] = "usuario.usuario">
+      <input type="text" matInput placeholder="Usuario" name="usuario" [(ngModel)]="usuario.usuario" class="form-control" formControlName="usuario">
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input type="password" matInput placeholder="Password" name="password" [(ngModel)] = "usuario.password">
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="usuario.password" class="form-control"
+        formControlName="password">
     </mat-form-field>
     <br>
     <div>
-      <button mat-button type="submit" class="buttonIn">Registrarse</button>
+      <button mat-button type="submit" class="buttonIn" [disabled]="!registroForm.valid">Registrarse</button>
+
     </div>
-    
   </form>
 </mat-card>
