@@ -1,9 +1,9 @@
 .titulo{
     background-color: rgb(15, 121, 121);
     width: 100%;
-    text-align: center;
     font-style: italic bold;
     font-size: 100%;
+    text-align: center
 }
 .buttonIn{
     background-color: blueviolet;
