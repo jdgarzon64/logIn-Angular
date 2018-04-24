@@ -1,17 +1,31 @@
-.titulo{
-    background-color: rgb(15, 121, 121);
+.titulo {
     width: 100%;
     font-style: italic bold;
     font-size: 100%;
-    text-align: center
+    text-align: center;
+    color: orange;
 }
-.buttonIn{
-    background-color: blueviolet;
+
+.buttonIn {
     width: 100%;
     text-align: center;
     font-style: italic bold;
     font-size: 100%;
+    background: orangered;
 }
-form mat-form-field{
-width: 100%;
+
+.field {
+    color: gold;
+}
+
+form mat-form-field {
+    width: 100%;
+}
+
+.cardLogin {
+    background-color: transparent;
+    margin-top: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
 }

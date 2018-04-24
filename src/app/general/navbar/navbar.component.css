@@ -5,10 +5,11 @@
     font-style: normal;
     padding: 0 14px;
     text-decoration: none;
+    color: orange;
 }
 
 .navbar {
-    background-color: transparent
+    background-color: transparent;
 }
 
 .spacer {
@@ -17,7 +18,7 @@
 
 .buttonNavbar:hover {
     color: #FFF;
-    border-color: indigo;
+    border-color: black;
 }
 
 a {
@@ -26,7 +27,7 @@ a {
 
 button:hover {
     color: #FFF;
-    border-color: indigo;
+    border-color: black;
 }
 
 a:visited {

@@ -1,9 +1,9 @@
-<mat-card>
+<mat-card class="cardRegistro">
   <div class="titulo">
     <mat-card-title> Registro</mat-card-title>
   </div>
   <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
+    <mat-form-field class="field">
       <input type="text" matInput placeholder="Nombre" name="nombre" [(ngModel)]="usuario.nombre" class="form-control" formControlName="nombre"
         [errorStateMatcher]="matcher">
       <mat-error *ngIf="registroForm.controls.nombre.hasError('required')">
@@ -11,7 +11,7 @@
       </mat-error>
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="field">
       <input type="text" matInput placeholder="Apellido" name="apellido" [(ngModel)]="usuario.apellido" class="form-control" formControlName="apellido"
         [errorStateMatcher]="matcher">
       <mat-error *ngIf="registroForm.controls.apellido.hasError('required')">
@@ -19,7 +19,7 @@
       </mat-error>
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="field">
       <input type="text" matInput placeholder="Usuario" name="usuario" [(ngModel)]="usuario.usuario" class="form-control" formControlName="usuario"
         [errorStateMatcher]="matcher">
       <mat-error *ngIf="registroForm.controls.usuario.hasError('required')">
@@ -27,14 +27,14 @@
       </mat-error>
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="field">
       <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="usuario.password" class="form-control"
         formControlName="password" [errorStateMatcher]="matcher">
-      <mat-error *ngIf="registroForm.controls.password.hasError('required')">
+      <mat-error class="error" *ngIf="registroForm.controls.password.hasError('required')">
         por favor complete la informacion
       </mat-error>
 
-      <mat-error *ngIf="registroForm.controls.password.validator.length < 8 ">
+      <mat-error class="error" *ngIf="registroForm.controls.password.validator.length < 8 ">
         contraseña invalida
       </mat-error>
     </mat-form-field>
