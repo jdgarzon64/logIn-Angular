@@ -1,44 +1,42 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from './../modelo/Usuario';
 import { Injectable } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
+import 'rxjs/add/operator/map';
 
 
 
 @Injectable()
 export class RegistroService {
-  usuariosList: AngularFireList<any>;
-  lista: Observable<any[]>;
-  usuario: Usuario = null;
-
-
+  headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Methods': 'GET,POST' });
   listaUsuarios: Array<Usuario> = [
     new Usuario('Juan David', 'Garzon', 'user', '1234'),
     new Usuario('Carlos', 'Torres', 'cj', '1234'),
     new Usuario('Maria', 'Rojas', 'mr', '1234')
   ];
 
-  constructor(private firebase: AngularFireDatabase) {
+  constructor(private firebase: AngularFireDatabase, private http: HttpClient) {
 
   }
 
 
+  getUsuarios(): Observable<{}> {
 
-  getUsuarios() {
-    return this.usuariosList = this.firebase.list('usuarios');
+    return this.http.get('http://localhost:62776/api/values/all');
   }
 
-
-  insertUsuario(usuario: Usuario) {
-    this.usuariosList.push({
-      nombre: usuario.nombre,
-      apellido: usuario.apellido,
-      usuario: usuario.usuario,
-      password: usuario.password
-    });
-  }
-
+  /*
+    insertUsuario(usuario: Usuario) {
+      this.usuariosList.push({
+        nombre: usuario.nombre,
+        apellido: usuario.apellido,
+        usuario: usuario.usuario,
+        password: usuario.password
+      });
+    }
+  */
   getUsuario(user: string, pass: string) {
     /*
     this.usuario = this.firebase.object('/usuarios/' + usuario).valueChanges();
@@ -47,15 +45,15 @@ export class RegistroService {
     */
     // this.usuariosList = this.firebase.list<Usuario>(`usuarios/${this.usuario.usuario}` ).valueChanges();
   }
-
-  logIn(userName: string, userPassword: string) {
-    for (let i = 0; i < this.listaUsuarios.length; i++) {
-      if (this.listaUsuarios[i].usuario === userName && this.listaUsuarios[i].password === userPassword) {
-        this.usuario = this.listaUsuarios[i];
-        return true;
+  /*
+    logIn(userName: string, userPassword: string) {
+      for (let i = 0; i < this.listaUsuarios.length; i++) {
+        if (this.listaUsuarios[i].usuario === userName && this.listaUsuarios[i].password === userPassword) {
+          this.usuario = this.listaUsuarios[i];
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-
+    */
 }

@@ -32,7 +32,7 @@ export class CardRegistroComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.registroForm);
-    this.registroService.insertUsuario(this.usuario);
+   // this.registroService.insertUsuario(this.usuario);
   }
 }
 
