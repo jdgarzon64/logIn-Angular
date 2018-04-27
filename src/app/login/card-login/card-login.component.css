@@ -24,8 +24,12 @@ form mat-form-field {
 
 .cardLogin {
     background-color: transparent;
-    margin-top: 100px;
-    position: absolute;
     margin-left: auto;
     margin-right: auto;
+    width: 40%;
+    height: 200px;
+    padding-top: 100px;
+    border-color: azure;
+    border-width: 1px;
+    border-style: solid;
 }

@@ -2,17 +2,25 @@
   <div class="titulo">
     <mat-card-title>Ingresar</mat-card-title>
   </div>
-  <form action="formLogIn">
+  <form [formGroup]="logInForm"  (ngSubmit)="onSubmit()">
     <mat-form-field class="field">
-      <input type="text" matInput placeholder="Usuario">
+      <input type="text" matInput placeholder="Usuario" name="usuario" [(ngModel)]="usuario.usuario" class="form-control" formControlName="usuario"
+      [errorStateMatcher]="matcher">
+    <mat-error class="error" *ngIf="logInForm.controls.usuario.hasError('required')">
+      por favor complete la informacion
+    </mat-error> 
     </mat-form-field>
     <br>
     <mat-form-field class="field">
-      <input type="password" matInput placeholder="Password">
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="usuario.password" class="form-control"
+      formControlName="password" [errorStateMatcher]="matcher">
+    <mat-error class="error" *ngIf="logInForm.controls.password.hasError('required')">
+      por favor complete la informacion
+    </mat-error>
     </mat-form-field>
     <br>
     <div>
-      <button mat-button class="buttonIn">Entrar</button>
+      <button mat-button type="submit" class="buttonIn" [disabled]="!logInForm.valid">Entrar</button>
     </div>
   </form>
 </mat-card>

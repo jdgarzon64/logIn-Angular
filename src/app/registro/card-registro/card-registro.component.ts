@@ -12,7 +12,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 })
 export class CardRegistroComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
-  usuario: Usuario = new Usuario();
+  usuario: Usuario = new Usuario('', '', '', '');
   registroForm: FormGroup;
 
   constructor(private fb: FormBuilder, private registroService: RegistroService) {

@@ -12,6 +12,7 @@ import { RegistroModule } from './registro/registro.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { RegistroService } from './servicios/registro.service';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RegistroService } from './servicios/registro.service';
     RegistroModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [RegistroService],
   bootstrap: [AppComponent]
