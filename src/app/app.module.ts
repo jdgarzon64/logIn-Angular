@@ -14,6 +14,7 @@ import { AngularFireModule } from 'angularfire2';
 import { RegistroService } from './servicios/registro.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './servicios/login/login.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule,
     HttpClientModule
   ],
-  providers: [RegistroService],
+  providers: [RegistroService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

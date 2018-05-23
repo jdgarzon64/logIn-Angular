@@ -1,23 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from './../modelo/Usuario';
 import { Injectable } from '@angular/core';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
 import 'rxjs/add/operator/map';
 
-
+const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
 @Injectable()
 export class RegistroService {
-  headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Methods': 'GET,POST' });
-  listaUsuarios: Array<Usuario> = [
-    new Usuario('Juan David', 'Garzon', 'user', '1234'),
-    new Usuario('Carlos', 'Torres', 'cj', '1234'),
-    new Usuario('Maria', 'Rojas', 'mr', '1234')
-  ];
 
-  constructor(private firebase: AngularFireDatabase, private http: HttpClient) {
+
+  constructor(private http: HttpClient) {
 
   }
 
@@ -26,6 +19,7 @@ export class RegistroService {
 
     return this.http.get('http://localhost:62776/api/values/all');
   }
+
 
   /*
     insertUsuario(usuario: Usuario) {
