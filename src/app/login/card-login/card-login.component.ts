@@ -5,6 +5,8 @@ import { LoginService } from './../../servicios/login/login.service';
 import { NgForm, FormGroup, FormGroupDirective } from '@angular/forms';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Subscription } from 'rxjs/Subscription';
+import { isNullOrUndefined } from 'util';
 
 
 @Component({
@@ -17,9 +19,11 @@ export class CardLoginComponent implements OnInit {
   usuario: Usuario = new Usuario();
   matcher = new MyErrorStateMatcher();
   logInForm: FormGroup;
-  usuarios: any[];
+  usuarios: Usuario[];
+  usuarioSubscription$: Subscription;
+
   constructor(private fb: FormBuilder,
-  private loginService: LoginService) {
+    private loginService: LoginService) {
     this.buildForm();
 
   }
@@ -30,26 +34,27 @@ export class CardLoginComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    // this.getallusers();
+    this.getUsers();
   }
   onSubmit() {
-    if (this.userValid() != null) {
-      console.log(this.userValid());
-    }
+   if(this.userValid())
+    console.log('entra');
+   
   }
-/*
-  getallusers() {
-    console.log('Hola');
-    this.registroService.getUsuarios().subscribe((x: Usuario[]) => {
-      this.usuarios = x;
-      console.log(x);
 
-    });
-  }
-*/
   userValid() {
-   // this.registroService.isValidUser(this.usuario).subscribe((x: Usuario) => {this.usuario = x; });
-    this.loginService.isValidUser(this.usuario).subscribe((x: Usuario) => {this.usuario = x; });
+    return !isNullOrUndefined(this.usuarios.filter(
+        (user: Usuario) => this.usuario.password === user.password && this.usuario.usuario === user.usuario
+    )[0]);
+
+  }
+
+  getUsers() {
+    this.usuarioSubscription$ = this.loginService
+      .getUsuarios()
+      .subscribe((result: Usuario[]) => {
+        this.usuarios = result;
+      });
   }
 }
 

@@ -21,7 +21,6 @@ export class CardRegistroComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.registroService.getUsuarios();
   }
   buildForm() {
     this.registroForm = this.fb.group({

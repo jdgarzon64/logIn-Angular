@@ -9,10 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './general/navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RegistroModule } from './registro/registro.module';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireModule } from 'angularfire2';
 import { RegistroService } from './servicios/registro.service';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './servicios/login/login.service';
 
@@ -30,9 +27,6 @@ import { LoginService } from './servicios/login/login.service';
     BrowserAnimationsModule,
     RegistroModule,
     AppRoutingModule,
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
     HttpClientModule
   ],
   providers: [RegistroService, LoginService],
