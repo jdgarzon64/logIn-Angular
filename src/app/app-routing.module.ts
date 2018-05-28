@@ -1,3 +1,4 @@
+import { FiguraComponent } from './figuras/figura/figura.component';
 import { ImagenComponent } from './inicio/imagen/imagen.component';
 import { RegistroComponent } from './registro/registro/registro.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: '', component: ImagenComponent},
   { path: 'inicio', component: ImagenComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'registro', component: RegistroComponent }
+  { path: 'registro', component: RegistroComponent },
+  { path: 'main', component: FiguraComponent }
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Subscription } from 'rxjs/Subscription';
 import { isNullOrUndefined } from 'util';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class CardLoginComponent implements OnInit {
   usuarioSubscription$: Subscription;
 
   constructor(private fb: FormBuilder,
-    private loginService: LoginService) {
+    private loginService: LoginService,
+    private router: Router) {
     this.buildForm();
 
   }
@@ -37,14 +39,17 @@ export class CardLoginComponent implements OnInit {
     this.getUsers();
   }
   onSubmit() {
-   if(this.userValid())
-    console.log('entra');
-   
+    if (this.userValid()) {
+      console.log('entra');
+      this.router.navigateByUrl('/main');
+    } else {
+      console.log('no entra');
+    }
   }
 
   userValid() {
     return !isNullOrUndefined(this.usuarios.filter(
-        (user: Usuario) => this.usuario.password === user.password && this.usuario.usuario === user.usuario
+      (user: Usuario) => this.usuario.password === user.password && this.usuario.usuario === user.usuario
     )[0]);
 
   }

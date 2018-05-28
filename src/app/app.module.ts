@@ -12,6 +12,7 @@ import { RegistroModule } from './registro/registro.module';
 import { RegistroService } from './servicios/registro.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './servicios/login/login.service';
+import { FiguraModule } from './figuras/figura.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { LoginService } from './servicios/login/login.service';
     MatToolbarModule,
     LoginModule,
     InicioModule,
+    FiguraModule,
     BrowserAnimationsModule,
     RegistroModule,
     AppRoutingModule,
