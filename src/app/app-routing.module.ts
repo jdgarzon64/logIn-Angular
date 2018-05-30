@@ -1,5 +1,5 @@
 import { DashboardComponent } from './figuras/dashboard/dashboard.component';
-import { ImagenComponent } from './inicio/imagen/imagen.component';
+
 import { RegistroComponent } from './registro/registro/registro.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,8 +8,8 @@ import { LoginComponent } from './login/login/login.component';
 
 
 const routes: Routes = [
-  { path: '', component: ImagenComponent},
-  { path: 'inicio', component: ImagenComponent},
+  { path: '', component: LoginComponent },
+  { path: 'inicio', component: LoginComponent },
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistroComponent },
   { path: 'main', component: DashboardComponent }

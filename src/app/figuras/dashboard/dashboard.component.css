@@ -3,16 +3,23 @@
     margin-left: 1%;
     margin-right: 25%;
     border-color: azure;
-    border-style: solid;
     border-color: peru;
     border-width: 2px;
     border-style: inset;
+}
+.fondo {
+
+    background-image:url('./../../imagenes/fondo_dashboard_1.jpg');
+    height: auto;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .dashboardRight{
     background-color: transparent;
     margin-left: 75.3%;
     border-color: peru;
     border-width: 2px;
-    border-style: solid; 
     border-style: inset;
 }
