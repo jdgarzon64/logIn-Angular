@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     MatCardModule,
   ],
-  declarations: [FiguraComponent, DashboardComponent],
-  exports: [FiguraComponent]
+  declarations: [DashboardComponent, FiguraComponent],
+  exports: [DashboardComponent]
 })
 export class FiguraModule { }

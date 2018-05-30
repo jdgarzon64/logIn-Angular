@@ -1,4 +1,4 @@
-import { FiguraComponent } from './figuras/figura/figura.component';
+import { DashboardComponent } from './figuras/dashboard/dashboard.component';
 import { ImagenComponent } from './inicio/imagen/imagen.component';
 import { RegistroComponent } from './registro/registro/registro.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'inicio', component: ImagenComponent},
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistroComponent },
-  { path: 'main', component: FiguraComponent }
+  { path: 'main', component: DashboardComponent }
 ];
 
 @NgModule({
