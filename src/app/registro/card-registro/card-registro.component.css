@@ -32,6 +32,7 @@ form mat-form-field {
     border-color: azure;
     border-width: 1px;
     border-style: solid;
+    margin-top: 60px;
 }
 .error{
     color: navajowhite; 

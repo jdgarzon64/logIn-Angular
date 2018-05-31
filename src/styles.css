@@ -2,4 +2,8 @@
 *{
     margin:0;
     padding: 0px;
+    /* background-image:url('./app/imagenes/fondo.jpg'); */
+}
+body{
+    background-color: black;
 }
