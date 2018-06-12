@@ -1,0 +1,18 @@
+.card {
+  background-color: palevioletred;
+  width:250px;
+  height: 200px;
+  border-color: peru;
+  border-width: 2px;
+  border-style: inset;
+}
+
+.flex-center-row {
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* z-index: -14; */
+}

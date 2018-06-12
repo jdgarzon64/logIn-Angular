@@ -6,6 +6,7 @@
     border-width: 2px;
     border-style: inset;
     margin-left: 1%;
+    justify-content: center;
 }
  .fondo {
     background-image:url('./../../imagenes/fondo_dashboard_1.jpg');
@@ -29,7 +30,8 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
+    flex: 1 1 auto;
+    justify-content: space-around;
     /* z-index: -14; */
 }
