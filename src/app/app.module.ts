@@ -11,6 +11,7 @@ import { RegistroModule } from './registro/registro.module';
 import { RegistroService } from './servicios/registro.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './servicios/login/login.service';
+import { PaginationService } from './servicios/paginator/pagination.service';
 import { FiguraModule } from './figuras/figura.module';
 
 
@@ -29,7 +30,7 @@ import { FiguraModule } from './figuras/figura.module';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [RegistroService, LoginService],
+  providers: [RegistroService, LoginService, PaginationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

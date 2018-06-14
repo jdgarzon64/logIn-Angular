@@ -1,8 +1,18 @@
-<div class="flex-center-row">
-    <mat-card class="card">
-      <img mat-card-image class="imagen">
-      <mat-card-content>
-      <p class="texto">!jadibdiqbdqwibdiwbsiwbdwdqwudbqwiudbwqubdqwidbjdiqoiqwd?</p>
-      </mat-card-content>
-    </mat-card>
+<div class="container-cards">
+
+  <div class="cont-cards  flex-center-row">
+    <div class="card flex-center-row" *ngFor="let figura of figuras">
+      <img mat-card-image class="imagen" src="./../../../assets/lobo.jpg">
+
+      <p class="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad optio natus eligendi ipsa beatae nihil soluta possimus
+        assumenda aliquam architecto, dolores esse, exercitationem, dignissimos tenetur hic dolorem vitae reprehenderit?
+        Praesentium!</p>
+      <p class="texto">{{figura.texto}}</p>
+
+
+
+    </div>
+  </div>
+
+  <div class="pagi"></div>
 </div>
