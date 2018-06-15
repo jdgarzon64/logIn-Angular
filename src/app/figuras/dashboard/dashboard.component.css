@@ -9,7 +9,7 @@
     justify-content: space-around;
 }
  .fondo {
-    background-image:url('./../../imagenes/fondo_dashboard_1.jpg');
+    background-image:url('./../../../assets/imagenes/fondo_dashboard_1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
