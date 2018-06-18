@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FiguraComponent } from './figura/figura.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { PaginatorComponent } from '../figuras/pagination/paginator/paginator.component';
 
 
 @NgModule({
@@ -13,7 +12,7 @@ import { PaginatorComponent } from '../figuras/pagination/paginator/paginator.co
     MatCardModule,
     MatPaginatorModule
   ],
-  declarations: [DashboardComponent, FiguraComponent, PaginatorComponent],
+  declarations: [DashboardComponent, FiguraComponent],
   exports: [DashboardComponent]
 })
 export class FiguraModule { }

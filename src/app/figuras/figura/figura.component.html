@@ -1,31 +1,18 @@
 <div class="container-cards">
-
   <div class="cont-cards  flex-center-row">
     <div class="card flex-center-row" *ngFor="let figura of figuras">
       <img mat-card-image class="imagen" [src]="figura.direccionImagen">
-
       <p class="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad optio natus eligendi ipsa beatae nihil soluta possimus
         assumenda aliquam architecto, dolores esse, exercitationem, dignissimos tenetur hic dolorem vitae reprehenderit?
         Praesentium!
       </p>
       <p class="texto">{{figura.texto}}</p>
-
-
-
     </div>
   </div>
 
   <div class="pagi">
-
-    <mat-paginator (page)="pageEvent = $event">
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event; metodo($event.pageIndex)" >
+        
     </mat-paginator>
-
-    <div *ngIf="pageEvent">
-      <h5>Page Change Event Properties</h5>
-      <div>List length: {{pageEvent.length}}</div>
-      <div>Page size: {{pageEvent.pageSize}}</div>
-      <div>Page index: {{pageEvent.pageIndex}}</div>
-    </div>
-
   </div>
 </div>

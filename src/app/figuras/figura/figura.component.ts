@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PaginationService } from '../../servicios/paginator/pagination.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Figura } from '../../modelo/Figura';
+import { PageEvent } from '@angular/material';
+import { MatPaginatorIntl } from '@angular/material';
+import { MatPaginator } from '@angular/material';
+
 
 @Component({
   selector: 'app-figura',
@@ -12,12 +16,20 @@ export class FiguraComponent implements OnInit {
   url: string;
   figuras: Figura[];
   figurasSubscription$: Subscription;
+
+  length = 30;
+  pageSize = 6;
+  pageSizeOptions = [6];
+  paginatorIntl = new MatPaginatorIntl();
+  pageEvent: PageEvent;
+
   constructor(private paginationService: PaginationService) { }
- // imagen: Image;
+  // imagen: Image;
   ngOnInit(): void {
-    this.getFiguras();
+     this.metodo(0);
+    // this.figuras = this.paginationService.getPagina(5);
     console.log(this.figuras);
-    this.url = 'https://cdnmundo1.img.sputniknews.com/images/107788/93/1077889368.jpg';
+    console.log(this.paginationService.getPagina(5));
   }
 
   getFiguras() {
@@ -28,7 +40,16 @@ export class FiguraComponent implements OnInit {
       });
   }
 
-//  getFigura(url: String) {
- //   this.imagen:
- // }
+  //  getFigura(url: String) {
+  //   this.imagen:
+  // }
+  metodo(data: any) {
+    console.log('^_^', data);
+    
+    this.paginationService.getPagina(data + 1).subscribe((x) => {
+      this.figuras = [];
+      this.figuras = x;
+    });
+
+  }
 }
