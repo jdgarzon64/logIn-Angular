@@ -1,7 +1,7 @@
 <div class="container-cards">
   <div class="cont-cards  flex-center-row">
     <div class="card flex-center-row" *ngFor="let figura of figuras">
-      <img mat-card-image class="imagen" [src]="figura.direccionImagen">
+      <img mat-card-image [class]="figura.classImage" [src]="figura.direccionImagen" (click)="isCollectedImage(figura)" [id]="figura.ImageId">
       <p class="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad optio natus eligendi ipsa beatae nihil soluta possimus
         assumenda aliquam architecto, dolores esse, exercitationem, dignissimos tenetur hic dolorem vitae reprehenderit?
         Praesentium!
@@ -10,9 +10,8 @@
     </div>
   </div>
 
-  <div class="pagi">
-    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event; metodo($event.pageIndex)" >
-        
+  <div>
+  <mat-paginator class="paginador" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event; metodo($event.pageIndex)" >
     </mat-paginator>
   </div>
 </div>

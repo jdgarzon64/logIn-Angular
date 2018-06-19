@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './servicios/login/login.service';
 import { PaginationService } from './servicios/paginator/pagination.service';
 import { FiguraModule } from './figuras/figura.module';
-
+import { CollectedPopUpComponent } from '../app/figuras/collected-pop-up/collected-pop-up.component';
 
 @NgModule({
   declarations: [

@@ -1,9 +1,9 @@
 .card {
   background-color: transparent;
-  width:320px;
+  width: 320px;
   min-height: 190px;
   margin-bottom: 20px;
-  border:1px solid peru;
+  border: 1px solid peru;
 }
 
 .flex-center-row {
@@ -15,29 +15,41 @@
   /* z-index: -14; */
 }
 
-.imagen {
-  width:100%;
+.fullColorImage {
+  width: 100%;
   height: 190px;
-} 
-.texto{
-  width: 100%;
-text-align: center;
-size: 10px;
 }
 
-.container-cards{
+.greyImage {
   width: 100%;
-  height:80vh ;
-  
+  height: 190px;
+  filter: grayscale(100%);
 }
 
-.pagi{
+.texto {
+  width: 100%;
+  text-align: center;
+  size: 10px;
+}
+
+.container-cards {
+  width: 100%;
+  height: 80vh;
+}
+
+.pagi {
   width: 100%;
   height: 80px;
 }
 
-.cont-cards{
+.cont-cards {
   width: 100%;
   height: 70vh;
-  overflow-y:scroll;
+  overflow-y: scroll;
+}
+
+.paginador {
+  background-color: transparent;
+  font-size: 18px;
+  color: black;
 }
