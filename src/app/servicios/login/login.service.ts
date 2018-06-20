@@ -1,10 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Usuario } from '../../modelo/Usuario';
+import { User } from '../../modelo/User';
 import 'rxjs/add/operator/map';
 import { of } from 'rxjs/observable/of';
-import { USUARIOS } from '../../../environments/mocks/mock-usuarios';
+import { USERS } from '../../../environments/mocks/mock-users';
 
 @Injectable()
 export class LoginService {
@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
 
-  getUsuarios(): Observable<Usuario[]> {
-    return of (USUARIOS);
+  getUsers(): Observable<User[]> {
+    return of (USERS);
   }
 }

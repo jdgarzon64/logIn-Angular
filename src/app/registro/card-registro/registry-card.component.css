@@ -1,4 +1,4 @@
-.titulo {
+.title {
     background-color: transparent;
     width: 100%;
     font-style: italic bold;
@@ -22,7 +22,7 @@ form mat-form-field {
     width: 100%;
 }
 
-.cardRegistro {
+.registryCard {
     background-color: transparent;
     margin-left: auto;
     margin-right: auto;

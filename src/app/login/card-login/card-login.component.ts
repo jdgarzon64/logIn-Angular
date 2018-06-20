@@ -1,4 +1,4 @@
-import { Usuario } from './../../modelo/Usuario';
+import { User } from '../../modelo/User';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from './../../servicios/login/login.service';
@@ -16,12 +16,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-login.component.css']
 })
 export class CardLoginComponent implements OnInit {
-  // usuario: Usuario = new Usuario('', '', '', '');
-  usuario: Usuario = new Usuario();
+
+  user: User = new User();
   matcher = new MyErrorStateMatcher();
   logInForm: FormGroup;
-  usuarios: Usuario[];
-  usuarioSubscription$: Subscription;
+  usersList: User[];
+  userSubscription$: Subscription;
 
   constructor(private fb: FormBuilder,
     private loginService: LoginService,
@@ -31,7 +31,7 @@ export class CardLoginComponent implements OnInit {
   }
   buildForm() {
     this.logInForm = this.fb.group({
-      usuario: ['', Validators.compose([Validators.required])],
+      user: ['', Validators.compose([Validators.required])],
       password: ['', Validators.compose([Validators.required])]
     });
   }
@@ -48,17 +48,17 @@ export class CardLoginComponent implements OnInit {
   }
 
   userValid() {
-    return !isNullOrUndefined(this.usuarios.filter(
-      (user: Usuario) => this.usuario.password === user.password && this.usuario.usuario === user.usuario
+    return !isNullOrUndefined(this.usersList.filter(
+      (user: User) => this.user.password === user.password && this.user.user === user.user
     )[0]);
 
   }
 
   getUsers() {
-    this.usuarioSubscription$ = this.loginService
-      .getUsuarios()
-      .subscribe((result: Usuario[]) => {
-        this.usuarios = result;
+    this.userSubscription$ = this.loginService
+      .getUsers()
+      .subscribe((result: User[]) => {
+        this.usersList = result;
       });
   }
 }

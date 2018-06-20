@@ -1,4 +1,4 @@
-import { RegistroService } from './../../servicios/registro.service';
+import { RegistryService } from '../../servicios/registry.service';
 import { Component, OnInit } from '@angular/core';
 
 

@@ -1,6 +1,6 @@
 import { DashboardComponent } from './figuras/dashboard/dashboard.component';
 
-import { RegistroComponent } from './registro/registro/registro.component';
+import { RegistryComponent } from './registro/registro/registry.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'inicio', component: LoginComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'registro', component: RegistroComponent },
+  { path: 'registro', component: RegistryComponent },
   { path: 'main', component: DashboardComponent }
 ];
 

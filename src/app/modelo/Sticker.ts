@@ -1,7 +1,7 @@
-export class Figura {
+export class Sticker {
     public imageId: number;
     public classImage: string;
-    public direccionImagen: string;
-    public texto: string;
+    public pathImagen: string;
+    public text: string;
     public collected: boolean;
 }

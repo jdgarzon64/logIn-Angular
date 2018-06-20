@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { FIGURAS } from '../../../environments/mocks/mock-figuras';
-import { Figura } from '../../modelo/Figura';
+import { STICKERS } from '../../../environments/mocks/mock-stickers';
+import { Sticker } from '../../modelo/Sticker';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class PaginationService {
 
-  listaFiguras: Figura[];
+  stickersList: Sticker[];
   paginaActual: any[];
   constructor(private http: HttpClient) {
-    this.listaFiguras = FIGURAS;
+    this.stickersList = STICKERS;
   }
-  arr: any[];
-  getFiguras(): Observable<Figura[]> {
-    return of(FIGURAS);
+  getStickers(): Observable<Sticker[]> {
+    return of(STICKERS);
   }
 
-  getPagina(index: number): Observable<Figura[]> {
+  getPage(index: number): Observable<Sticker[]> {
     // return this.listaFiguras.slice(index: number,index: number);
-    return of (this.listaFiguras.slice(((index) * 6) - 6 , ((index) * 6)));
+    return of (this.stickersList.slice(((index) * 6) - 6 , ((index) * 6)));
   }
 }

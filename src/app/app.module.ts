@@ -7,12 +7,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './general/navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { RegistroModule } from './registro/registro.module';
-import { RegistroService } from './servicios/registro.service';
+import { RegistroModule } from './registro/registry.module';
+import { RegistryService } from './servicios/registry.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './servicios/login/login.service';
 import { PaginationService } from './servicios/paginator/pagination.service';
-import { FiguraModule } from './figuras/figura.module';
+import { FiguraModule } from './figuras/sticker.module';
 import { CollectedPopUpComponent } from '../app/figuras/collected-pop-up/collected-pop-up.component';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { CollectedPopUpComponent } from '../app/figuras/collected-pop-up/collect
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [RegistroService, LoginService, PaginationService],
+  providers: [RegistryService, LoginService, PaginationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

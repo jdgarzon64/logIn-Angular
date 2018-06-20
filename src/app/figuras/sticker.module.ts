@@ -1,7 +1,7 @@
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FiguraComponent } from './figura/figura.component';
+import { StickerComponent } from './figura/sticker.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDialogModule,
     MatFormFieldModule
   ],
-  declarations: [DashboardComponent, FiguraComponent, CollectedPopUpComponent],
+  declarations: [DashboardComponent, StickerComponent, CollectedPopUpComponent],
   exports: [DashboardComponent],
   entryComponents: [CollectedPopUpComponent]
 })
