@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './servicios/login/login.service';
 import { PaginationService } from './servicios/paginator/pagination.service';
 import { FiguraModule } from './figuras/sticker.module';
-import { CollectedPopUpComponent } from '../app/figuras/collected-pop-up/collected-pop-up.component';
+import { UserService } from './servicios/user-services/user.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { CollectedPopUpComponent } from '../app/figuras/collected-pop-up/collect
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [RegistryService, LoginService, PaginationService],
+  providers: [RegistryService, LoginService, PaginationService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

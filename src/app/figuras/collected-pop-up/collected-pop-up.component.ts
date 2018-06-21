@@ -19,8 +19,7 @@ export class CollectedPopUpComponent {
       console.log(this.title);
       this.positiveButton = 'Yes, i want';
       this.negativeButton = 'Offcourse not!';
-    }
-    else {
+    } else {
       this.title = 'Do you already gets the sticker?';
       console.log(this.title);
       this.positiveButton = 'Yes, i got it!!';

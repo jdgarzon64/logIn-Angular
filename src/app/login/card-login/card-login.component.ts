@@ -1,6 +1,6 @@
 import { User } from '../../modelo/User';
 import { Observable } from 'rxjs/Observable';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { LoginService } from './../../servicios/login/login.service';
 import { NgForm, FormGroup, FormGroupDirective } from '@angular/forms';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
@@ -16,8 +16,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-login.component.css']
 })
 export class CardLoginComponent implements OnInit {
+  @Output() user: User = new User();
 
-  user: User = new User();
   matcher = new MyErrorStateMatcher();
   logInForm: FormGroup;
   usersList: User[];
@@ -27,6 +27,7 @@ export class CardLoginComponent implements OnInit {
     private loginService: LoginService,
     private router: Router) {
     this.buildForm();
+
 
   }
   buildForm() {
@@ -48,10 +49,20 @@ export class CardLoginComponent implements OnInit {
   }
 
   userValid() {
+    const userOK = this.usersList.filter(
+      (user: User) => this.user.password === user.password && this.user.user === user.user
+    )[0];
+    if (!isNullOrUndefined(userOK)) {
+      localStorage.setItem('userId', userOK.userId + '');
+      return true;
+    } else {
+      return false;
+    }
+    /*
     return !isNullOrUndefined(this.usersList.filter(
       (user: User) => this.user.password === user.password && this.user.user === user.user
     )[0]);
-
+*/
   }
 
   getUsers() {

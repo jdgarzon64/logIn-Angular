@@ -29,7 +29,7 @@ export class StickerComponent implements OnInit {
     console.log(this.stickers);
     console.log(this.paginationService.getPage(5));
   }
-
+/*
   getFiguras() {
     this.stickersSubscription$ = this.paginationService
       .getStickers()
@@ -37,7 +37,7 @@ export class StickerComponent implements OnInit {
         this.stickers = result;
       });
   }
-
+*/
   metodo(data: any) {
     console.log('^_^', data);
     this.paginationService.getPage(data + 1).subscribe((x) => {

@@ -7,6 +7,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CollectedPopUpComponent } from './collected-pop-up/collected-pop-up.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PictureComponent } from './profile/picture/picture.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDialogModule,
     MatFormFieldModule
   ],
-  declarations: [DashboardComponent, StickerComponent, CollectedPopUpComponent],
+  declarations: [DashboardComponent, StickerComponent, CollectedPopUpComponent, PictureComponent],
   exports: [DashboardComponent],
   entryComponents: [CollectedPopUpComponent]
 })

@@ -37,3 +37,9 @@
     justify-content: space-around;
     /* z-index: -14; */
 }
+
+.profilePicture{
+    width: 50%;
+    height: 100px;
+    margin-left: 25%;
+}
