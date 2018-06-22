@@ -54,6 +54,7 @@ export class CardLoginComponent implements OnInit {
     )[0];
     if (!isNullOrUndefined(userOK)) {
       localStorage.setItem('userId', userOK.userId + '');
+      localStorage.setItem('activeSession', 'true');
       return true;
     } else {
       return false;

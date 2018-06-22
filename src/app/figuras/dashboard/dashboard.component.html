@@ -3,6 +3,9 @@
     <app-sticker></app-sticker>
   </div>
   <div class="dashboardRight">
+    <div class="profileInf">
+      <app-information [currentUser] = "currentUser"></app-information>
+    </div>
     <div class="profilePicture">
       <app-picture [pathImage]="currentUser.profilePicture"></app-picture>
     </div>

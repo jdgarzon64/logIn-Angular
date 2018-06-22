@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CollectedPopUpComponent } from './collected-pop-up/collected-pop-up.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { PictureComponent } from './profile/picture/picture.component';
+import { InformationComponent } from './profile/information/information.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { PictureComponent } from './profile/picture/picture.component';
     MatDialogModule,
     MatFormFieldModule
   ],
-  declarations: [DashboardComponent, StickerComponent, CollectedPopUpComponent, PictureComponent],
+  declarations: [DashboardComponent, StickerComponent, CollectedPopUpComponent, PictureComponent, InformationComponent],
   exports: [DashboardComponent],
   entryComponents: [CollectedPopUpComponent]
 })
