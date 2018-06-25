@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee');
+.dialogCard {
+  background-color: blueviolet;
+  overflow: hidden;
+  height: 100%;
+  padding: 0px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Handlee', cursive !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dialogCard p{
+text-align: center;
+}
+.buttonContainer {
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.buttons {
+  width: 40%;
+  height: 60px;
+  color: brown;
+  background-color: aqua;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Handlee', cursive;
+}
+.text{
+    text-align: left;
+}
+.jet{
+    display: flex;
+    justify-content: center;
+}

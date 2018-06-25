@@ -2,9 +2,11 @@
   <mat-toolbar-row>
     <span class="spacer"></span>
     <nav>
-      <a routerLink="/inicio" class="buttonNavbar" >INICIO</a>
+      <a routerLink="/inicio" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async">INICIO</a>
       <a routerLink="/login" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async">LOGIN</a>
       <a routerLink="/registro" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async">REGISTRARSE</a>
+      <a routerLink="/main" class="buttonNavbar" *ngIf="!(canShowNavBarResponsive()|async)">ALBUM</a>
+      <a routerLink="/inicio" class="buttonNavbar" *ngIf="!(canShowNavBarResponsive()|async)" (click)="logOutRequest()">SALIR</a>
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>

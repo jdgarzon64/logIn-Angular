@@ -11,10 +11,12 @@ export class CollectedPopUpComponent {
   title: string;
   positiveButton: string;
   negativeButton: string;
+  jetImage: string;
   constructor(
     public dialogRef: MatDialogRef<CollectedPopUpComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-    if (data.collected) {
+    this.jetImage = '../../../assets/imagenes/jet-logo.png';
+    if (data.sticker.collected) {
       this.title = 'do you want to forget the sticker?';
       console.log(this.title);
       this.positiveButton = 'Yes, i want';
