@@ -55,7 +55,7 @@ export class StickerComponent implements OnInit {
   isCollectedImage(sticker: Sticker) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '300px';
-    dialogConfig.height = '300px';
+    dialogConfig.height = '340px';
     dialogConfig.data = {
       sticker : sticker,
       nick : this.currentUser.user
