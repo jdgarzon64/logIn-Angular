@@ -1,12 +1,15 @@
 <mat-toolbar class="navbar">
   <mat-toolbar-row>
+    <div class="jet">
+      <img [src]="jetImage">
+    </div>
     <span class="spacer"></span>
     <nav>
-      <a routerLink="/inicio" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async">INICIO</a>
-      <a routerLink="/login" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async">LOGIN</a>
-      <a routerLink="/registro" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async">REGISTRARSE</a>
-      <a routerLink="/main" class="buttonNavbar" *ngIf="!(canShowNavBarResponsive()|async)">ALBUM</a>
-      <a routerLink="/inicio" class="buttonNavbar" *ngIf="!(canShowNavBarResponsive()|async)" (click)="logOutRequest()">SALIR</a>
+      <img routerLink="/inicio" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async" [src]='mainPageImage'>
+      <img routerLink="/login" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async" [src]='logInImage'>
+      <img routerLink="/registro" class="buttonNavbar" *ngIf="canShowNavBarResponsive()|async" [src]='signUpImage'>
+      <img routerLink="/main" class="buttonNavbar" *ngIf="!(canShowNavBarResponsive()|async)" [src]='albumImage'>
+      <img routerLink="/inicio" class="buttonNavbar" *ngIf="!(canShowNavBarResponsive()|async)" (click)="logOutRequest()" [src]='logOutImage'>
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>

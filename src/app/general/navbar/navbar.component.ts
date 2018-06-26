@@ -10,8 +10,19 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  jetImage: string;
+  mainPageImage: string;
+  logInImage: string;
+  signUpImage: string;
+  albumImage: string;
+  logOutImage: string;
   constructor(private router: Router) {
+    this.jetImage = '../../../assets/imagenes/jet-logo.png';
+    this.mainPageImage = '../../../assets/imagenes/inicio.png';
+    this.logInImage = '../../../assets/imagenes/loguearse.png';
+    this.signUpImage = '../../../assets/imagenes/registrarse.png';
+    this.albumImage = '../../../assets/imagenes/album.png';
+    this.logOutImage = '../../../assets/imagenes/salir.png';
   }
 
   ngOnInit() {

@@ -7,6 +7,7 @@
     text-decoration: none;
     color: orange;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .navbar {
@@ -20,8 +21,7 @@
 }
 
 .buttonNavbar:hover {
-    color: #FFF;
-    border-color: black;
+    transform: scale(1.1);
 }
 
 a {
@@ -36,3 +36,9 @@ button:hover {
 a:visited {
     text-decoration: none;
 }
+
+.jet {
+    display: flex;
+    justify-content: center;
+  }
+  
