@@ -1,8 +1,11 @@
 <mat-card class="registryCard">
-  <div class="title">
-    <mat-card-title> Registro</mat-card-title>
-  </div>
   <form [formGroup]="registryForm" (ngSubmit)="onSubmit()">
+    <div class="profilePictureDiv">
+      <label class="labelImage" *ngIf="!hasImage">{{selectImageMessage}}
+        <input style="display: none" type="file" (change)="findImage($event)" #fileInput>
+      </label>
+      <img mat-card-image class="profilePicture" [src]=pathProfilePicture *ngIf="hasImage">
+    </div>
     <mat-form-field class="field">
       <input type="text" matInput placeholder="Name" name="name" [(ngModel)]="user.name" class="form-control" formControlName="name"
         [errorStateMatcher]="matcher">
@@ -28,8 +31,8 @@
     </mat-form-field>
     <br>
     <mat-form-field class="field">
-      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="user.password" class="form-control"
-        formControlName="password" [errorStateMatcher]="matcher">
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="user.password" class="form-control" formControlName="password"
+        [errorStateMatcher]="matcher">
       <mat-error class="error" *ngIf="registryForm.controls.password.hasError('required')">
         please, complete all the fields
       </mat-error>

@@ -2,7 +2,7 @@ import { User } from '../../modelo/User';
 import { NgForm, FormGroup, FormGroupDirective } from '@angular/forms';
 import { RegistryService } from '../../servicios/registry.service';
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators, FormControl} from '@angular/forms';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
@@ -14,10 +14,17 @@ export class RegistryCardComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   user: User = new User();
   registryForm: FormGroup;
+  pathProfilePicture: string;
+  selectImageMessage: string;
+  hasImage: boolean;
+  selectedFile: File;
 
   constructor(private fb: FormBuilder, private registroService: RegistryService) {
-       this.buildForm();
-   }
+    this.buildForm();
+    this.selectImageMessage = 'Click here and select imagen from computer';
+    this.pathProfilePicture = '';
+    this.hasImage = false;
+  }
 
   ngOnInit() {
   }
@@ -32,7 +39,15 @@ export class RegistryCardComponent implements OnInit {
   onSubmit() {
     console.log(this.registryForm);
   }
+
+  findImage(event: any) {
+    console.log(event);
+    if (event.target.files[0]) {
+      this.selectedFile = event.target.files[0];
+    }
+  }
 }
+
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

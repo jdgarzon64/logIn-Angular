@@ -14,15 +14,15 @@ export class NavbarComponent implements OnInit {
   mainPageImage: string;
   logInImage: string;
   signUpImage: string;
-  albumImage: string;
+  dashboardImage: string;
   logOutImage: string;
   constructor(private router: Router) {
     this.jetImage = '../../../assets/imagenes/jet-logo.png';
-    this.mainPageImage = '../../../assets/imagenes/inicio.png';
-    this.logInImage = '../../../assets/imagenes/loguearse.png';
-    this.signUpImage = '../../../assets/imagenes/registrarse.png';
-    this.albumImage = '../../../assets/imagenes/album.png';
-    this.logOutImage = '../../../assets/imagenes/salir.png';
+    this.mainPageImage = '../../../assets/imagenes/home.png';
+    this.logInImage = '../../../assets/imagenes/login.png';
+    this.signUpImage = '../../../assets/imagenes/signup.png';
+    this.dashboardImage = '../../../assets/imagenes/dashboard.png';
+    this.logOutImage = '../../../assets/imagenes/logout.png';
   }
 
   ngOnInit() {
